@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/memo_index_day"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"/>
+
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/index_spending_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="支出"/>
+
+            <TextView
+                android:id="@+id/memo_index_te"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/index_income_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="収入"/>
+
+            <TextView
+                android:id="@+id/memo_index_te2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:textSize="20dp"/>
+
+            <TextView
+                android:id="@+id/index_memo_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="メモ"/>
+
+            <TextView
+                android:id="@+id/memo_index_te3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:textSize="20dp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/syuusi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/frame_style"
+            android:layout_weight="1"
+            android:layout_margin="5dp"
+            android:text="収支" />
+
+        <Button
+            android:id="@+id/memo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/frame_style"
+            android:layout_weight="1"
+            android:layout_margin="5dp"
+            android:text="メモ" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/camera_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/camera"
+            android:layout_margin="16dp" />
+
+    </LinearLayout>
+</LinearLayout>

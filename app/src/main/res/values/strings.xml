@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Kakeibo</string>
+    <string name="fragment_input_error">%sを入力して下さい</string>
+    <string name="spending_input_error">%sを入力して下さい</string>
+</resources>
