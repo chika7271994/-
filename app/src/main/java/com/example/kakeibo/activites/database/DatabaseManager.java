@@ -30,15 +30,15 @@ public class DatabaseManager {
     }
 
     /**
-     *  ここからDBに書き込み
+     *  ここからDBにレコード書き込み
      */
 
     //支出データ書き込み
-    public boolean addSpending(String category, int price, int year, int month, int days){
+    public boolean addSpending(String category, int price, String image, int year, int month, int days) {
         final ContentValues values = new ContentValues();
         values.put(DatabaseHelper.SPENDING_CATEGORY, category);
         values.put(DatabaseHelper.SPENDING_PRICE, price);
-        //values.put(DatabaseHelper.SPENDING_CAMERA, String.valueOf(camera));
+        values.put(DatabaseHelper.PIC_LOCATION, image);
         values.put(DatabaseHelper.SPENDING_YEAR, year);
         values.put(DatabaseHelper.SPENDING_MONTH, month);
         values.put(DatabaseHelper.SPENDING_DAYS, days);

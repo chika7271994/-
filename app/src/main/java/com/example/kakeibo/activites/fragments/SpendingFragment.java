@@ -1,5 +1,6 @@
 package com.example.kakeibo.activites.fragments;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -16,6 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.kakeibo.R;
+import com.example.kakeibo.activites.constants.Common;
 import com.example.kakeibo.activites.database.DatabaseManager;
 import com.example.kakeibo.activites.utils.LogUtil;
 
@@ -51,6 +53,7 @@ public class SpendingFragment extends BaseFragment {
     private String mm;
     private String dd;
     private String yy;
+    private String mImageLocation;
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState){
@@ -110,7 +113,7 @@ public class SpendingFragment extends BaseFragment {
         int days = Integer.valueOf(dd);
 
         //データベースに書き込み
-        mDatabase.addSpending(category, i, year, month, days);
+        mDatabase.addSpending(category, i, mImageLocation, year, month, days);
 
         clearInputFields();
     }
@@ -163,6 +166,23 @@ public class SpendingFragment extends BaseFragment {
     @OnClick(R.id.spending_back)
     void btnBackClick(){
         navigateToFragment(CalendarFragment.newInstance());
+    }
+
+    //カメラボタン
+    @OnClick(R.id.camera_button)
+    void onClickCamera(){
+        final BaseFragment cameraFragment = CameraFragment.newInstance();
+        cameraFragment.setTargetFragment(this, Common.CAMERA_REQUEST_CODE);
+        obtainBaseActivity().replaceFragment(cameraFragment);
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data){
+        if (requestCode == Common.CAMERA_REQUEST_CODE && resultCode == Activity.RESULT_OK) {
+            mImageLocation = data.getStringExtra(Common.BUNDLE_IMAGE_PATH);
+            //mDatabase.addCamera(mImageLocation);
+            LogUtil.debug("onActivityResult", "イメージパス" + mImageLocation);
+        }
     }
 
 }

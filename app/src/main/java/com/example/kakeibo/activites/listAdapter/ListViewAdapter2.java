@@ -47,8 +47,8 @@ public class ListViewAdapter2 extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent){
         convertView = layoutInflater.inflate(R.layout.item_list,parent,false);
 
-        ((TextView)convertView.findViewById(R.id.spending_category)).setText(list.get(position).getIncome_category());
-        ((TextView)convertView.findViewById(R.id.spending_price)).setText(String.valueOf(list.get(position).getIncome_price()));
+        ((TextView)convertView.findViewById(R.id.category)).setText(list.get(position).getIncome_category());
+        ((TextView)convertView.findViewById(R.id.price)).setText(String.valueOf(list.get(position).getIncome_price()));
 
         return convertView;
     }

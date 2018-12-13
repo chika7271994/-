@@ -4,6 +4,7 @@ public class SpendingListItems {
     private int spending_id;
     private String spending_category;
     private int spending_price;
+    private String imageUri;
 
 
     public int getSpending_id() {
@@ -29,4 +30,8 @@ public class SpendingListItems {
     public void setSpending_price(int spending_price) {
         this.spending_price = spending_price;
     }
+
+    public String getImageUri() { return imageUri; }
+
+    public void setImageUri(String imageUri) { this.imageUri = imageUri; }
 }

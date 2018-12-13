@@ -52,7 +52,7 @@ public class KakeiboFragment extends BaseFragment{
     private String yy;
     private String mm;
     private String dd;
-    private String mImageLocation;
+
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -133,12 +133,6 @@ public class KakeiboFragment extends BaseFragment{
     }
 
 
-
-
-    /**
-     *  --- 画面遷移 --------------------------------------------------------------------------
-     */
-
     //収支入力ページ移行
     @OnClick(R.id.syuusi)
     void btnSyuusiClick(){
@@ -149,20 +143,4 @@ public class KakeiboFragment extends BaseFragment{
     @OnClick(R.id.memo)
     void btnMemoClick() { navigateToFragment(MemoFragment.newInstance(data)); }
 
-    //カメラボタン
-    @OnClick(R.id.camera_button)
-    void onClickCamera(){
-        final BaseFragment cameraFragment = CameraFragment.newInstance();
-        cameraFragment.setTargetFragment(this, Common.CAMERA_REQUEST_CODE);
-        obtainBaseActivity().replaceFragment(cameraFragment);
-    }
-
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data){
-        if (requestCode == Common.CAMERA_REQUEST_CODE && resultCode == Activity.RESULT_OK) {
-            mImageLocation = data.getStringExtra(Common.BUNDLE_IMAGE_PATH);
-            mDatabase.addCamera(mImageLocation);
-            LogUtil.debug("onActivityResult", "イメージパス" + mImageLocation);
-        }
-    }
 }

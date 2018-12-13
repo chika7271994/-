@@ -1,19 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item_list_layout"
     android:orientation="horizontal"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
 
+    <ImageView
+        android:id="@+id/list_image"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:padding="10dp"
+        android:scaleType="centerInside"
+        android:adjustViewBounds="true"
+        android:src="@android:drawable/ic_menu_gallery"/>
+
     <TextView
-        android:id="@+id/spending_category"
+        android:id="@+id/category"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingTop="15dp"
+        android:paddingRight="15dp"
+        android:textSize="30dp"
         android:text="test1"/>
 
     <TextView
-        android:id="@+id/spending_price"
+        android:id="@+id/price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingTop="15dp"
+        android:textSize="30sp"
         android:text="test2"/>
+
+    <include layout="@layout/separator_turquoise"/>
 
 </LinearLayout>

@@ -87,14 +87,5 @@
             android:layout_margin="5dp"
             android:text="メモ" />
 
-        <android.support.design.widget.FloatingActionButton
-            android:id="@+id/camera_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:src="@drawable/camera"
-            android:layout_margin="16dp" />
-
     </LinearLayout>
 </LinearLayout>

@@ -28,6 +28,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String SPENDING_YEAR = "s_year";
     public static final String SPENDING_MONTH = "s_month";
     public static final String SPENDING_DAYS = "s_days";
+    public static final String PIC_LOCATION = "location";
 
     //収入カラム
     public static final String INCOME_ID = "i_id";
@@ -61,7 +62,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             SPENDING_PRICE    + " INTEGER NOT NULL, " +
             SPENDING_YEAR     + " INTEGER NOT NULL, " +
             SPENDING_MONTH    + " INTEGER NOT NULL, " +
-            SPENDING_DAYS     + " INTEGER NOT NULL "  +
+            SPENDING_DAYS     + " INTEGER NOT NULL, "  +
+            PIC_LOCATION      + " TEXT " +
             " ) ";
 
     //収入テーブル作成
