@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" >
+
+    <item android:id="@+id/menu_spending"
+        android:icon="@drawable/align_top"
+        android:orderInCategory="100"
+        app:showAsAction="ifRoom"
+        android:title="Spending">
+    </item>
+
+    <item android:id="@+id/menu_income"
+        android:icon="@drawable/align_bottom"
+        android:orderInCategory="100"
+        app:showAsAction="ifRoom"
+        android:title="Income">
+    </item>
+
+    <item android:id="@+id/menu_memo"
+        android:icon="@drawable/event"
+        android:orderInCategory="100"
+        app:showAsAction="ifRoom"
+        android:title="Memo">
+    </item>
+</menu>
