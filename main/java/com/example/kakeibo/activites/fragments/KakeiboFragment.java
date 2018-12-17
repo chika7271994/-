@@ -80,10 +80,6 @@ public class KakeiboFragment extends BaseFragment{
         mm = new SimpleDateFormat("MM", Locale.getDefault()).format(new Date(day));
         dd = new SimpleDateFormat("dd", Locale.getDefault()).format(new Date(day));
         textDay.setText(data);
-        LogUtil.debug("KakeiboFragment", "data日付は"+ data);
-        LogUtil.debug("KakeiboFragment", "yy日付は"+ yy);
-        LogUtil.debug("KakeiboFragment", "mm日付は"+ mm);
-        LogUtil.debug("KakeiboFragment", "dd日付は"+ dd);
 
         mDatabase = DatabaseManager.getInstance(getActivity());
 
@@ -142,5 +138,9 @@ public class KakeiboFragment extends BaseFragment{
     //メモページ移行
     @OnClick(R.id.memo)
     void btnMemoClick() { navigateToFragment(MemoFragment.newInstance(data)); }
+
+    //カレンダーページ移行
+    @OnClick(R.id.kakeibo_back)
+    void btnClick() { navigateToFragment(CalendarFragment.newInstance()); }
 
 }

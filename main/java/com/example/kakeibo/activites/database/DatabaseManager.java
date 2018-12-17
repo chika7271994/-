@@ -66,16 +66,6 @@ public class DatabaseManager {
         return db.insert(DatabaseHelper.MEMO_TABLE, null, mValues) != -1;
     }
 
-    //カメラデータ書き込み
-    public boolean addCamera(String name){
-        final ContentValues cValues = new ContentValues();
-        cValues.put(DatabaseHelper.CAMERA_NAME, name);
-//        cValues.put(DatabaseHelper.CAMERA_IMAGE, image);
-//        cValues.put(DatabaseHelper.CAMERA_YEAR, cYear);
-//        cValues.put(DatabaseHelper.CAMERA_MONTH, cMonth);
-//        cValues.put(DatabaseHelper.CAMERA_DAYS, cDays);
-        return db.insert(DatabaseHelper.CAMERA_TABLE, null, cValues) != -1;
-    }
 
     /**
      *  ここからDBから読み込み
@@ -99,9 +89,11 @@ public class DatabaseManager {
         return db.rawQuery(sql, null);
     }
 
-    //メモ全体のデータ読み込み
-    public Cursor retreveAllMemoData(){
-        return db.rawQuery("SELECT * FROM " + DatabaseHelper.MEMO_TABLE, null);
+    //メモカレンダー毎データ読み込み
+    public Cursor retreveMemoData(String year, String month, String days){
+        String sql = " SELECT * FROM " + DatabaseHelper.MEMO_TABLE + " WHERE EXISTS " +
+                "(SELECT * FROM " + DatabaseHelper.MEMO_TABLE + " WHERE " + DatabaseHelper.MEMO_YEAR + "=" + year + " AND " + DatabaseHelper.MEMO_MONTH + "=" + month + " AND " + DatabaseHelper.MEMO_DAYS + "=" + days + ")";
+        return db.rawQuery(sql, null);
     }
 
 

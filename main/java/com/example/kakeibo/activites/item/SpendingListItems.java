@@ -15,17 +15,15 @@ public class SpendingListItems {
         this.spending_id = spending_id;
     }
 
-    //-----------------------------------------------------------------------------------
+
 
     public String getSpending_category(){
         return spending_category;
     }
 
-    public void setSpending_category(String spending_category){
-        this.spending_category = spending_category;
-    }
+    public void setSpending_category(String spending_category) { this.spending_category = spending_category; }
 
-    //-----------------------------------------------------------------------------------
+
 
     public int getSpending_price(){
         return spending_price;
@@ -35,7 +33,7 @@ public class SpendingListItems {
         this.spending_price = spending_price;
     }
 
-    //-----------------------------------------------------------------------------------
+
 
     public String getImageUri() { return imageUri; }
 

@@ -17,9 +17,7 @@ import android.widget.TextView;
 import com.example.kakeibo.R;
 import com.example.kakeibo.activites.database.DatabaseManager;
 import com.example.kakeibo.activites.item.IncomeListItems;
-import com.example.kakeibo.activites.item.SpendingListItems;
 import com.example.kakeibo.activites.listAdapter.IncomeListAdapter;
-import com.example.kakeibo.activites.listAdapter.SpendingListAdapter;
 import com.example.kakeibo.activites.utils.LogUtil;
 
 import java.util.ArrayList;

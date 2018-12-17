@@ -88,4 +88,21 @@
             android:text="メモ" />
 
     </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/kakeibo_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/frame_style"
+            android:layout_alignParentBottom="true"
+            android:text="戻る"/>
+
+
+    </RelativeLayout>
+
 </LinearLayout>

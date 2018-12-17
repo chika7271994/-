@@ -69,7 +69,7 @@ public class CalendarFragment extends BaseFragment implements AdapterView.OnItem
         inflater.inflate(R.menu.action, menu);
         menu.findItem(R.id.menu_spending);
         menu.findItem(R.id.menu_income);
-        menu.findItem(R.id.menu_memo);
+        //menu.findItem(R.id.menu_memo);
     }
 
     @Override

@@ -81,10 +81,6 @@ public class MemoFragment extends BaseFragment {
         yy = day.substring(0, 4);
         mm = day.substring(5, 7);
         dd = day.substring(8, 10);
-        LogUtil.debug("addMemo", "memoは" + memo);
-        LogUtil.debug("addMemo", "yyは"+ yy);
-        LogUtil.debug("addMemo", "mmは"+ mm);
-        LogUtil.debug("addMemo", "ddは"+ dd);
         int year = Integer.valueOf(yy);
         int month = Integer.valueOf(mm);
         int days = Integer.valueOf(dd);

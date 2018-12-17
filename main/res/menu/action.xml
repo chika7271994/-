@@ -16,10 +16,10 @@
         android:title="Income">
     </item>
 
-    <item android:id="@+id/menu_memo"
+    <!--<item android:id="@+id/menu_memo"
         android:icon="@drawable/event"
         android:orderInCategory="100"
         app:showAsAction="ifRoom"
         android:title="Memo">
-    </item>
+    </item>-->
 </menu>

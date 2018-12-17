@@ -18,8 +18,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String INCOME_TABLE = "income_table";
     //メモテーブル
     public static final String MEMO_TABLE = "memo_table";
-    //カメラテーブル
-    public static final String CAMERA_TABLE = "camera_table";
 
     //支出カラム
     public static final String SPENDING_ID = "s_id";
@@ -45,13 +43,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String MEMO_MONTH = "m_month";
     public static final String MEMO_DAYS = "m_days";
 
-    //カメラカラム
-    public static final String CAMERA_ID = "c_id";
-    public static final String CAMERA_NAME = "c_name";
-//    public static final String CAMERA_IMAGE = "c_image";
-//    public static final String CAMERA_YEAR = "c_year";
-//    public static final String CAMERA_MONTH = "c_month";
-//    public static final String CAMERA_DAYS = "c_days";
 
 
     //支出テーブル作成
@@ -87,16 +78,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             MEMO_DAYS  + " TEXT"   +
             " ) ";
 
-    //カメラテーブル作成
-    private static final String SQL_CREATE_CAMERA = " CREATE TABLE IF NOT EXISTS " + CAMERA_TABLE +
-            " ( " +
-            CAMERA_ID    + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-            CAMERA_NAME  + " TEXT" +
-//            CAMERA_IMAGE + " BLOB, " +
-//            CAMERA_YEAR  + " TEXT, " +
-//            CAMERA_MONTH + " TEXT, " +
-//            CAMERA_DAYS  + " TEXT "  +
-            " ) ";
 
     DatabaseHelper(Context context) { super(context, DATABASE_NAME, null, DATABASE_VERSION); }
 
@@ -106,7 +87,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(SQL_CREATE_SPENDING);
         db.execSQL(SQL_CREATE_INCOME);
         db.execSQL(SQL_CREATE_MEMO);
-        db.execSQL(SQL_CREATE_CAMERA);
     }
 
     @Override
@@ -115,7 +95,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + SPENDING_TABLE);
         db.execSQL("DROP TABLE IF EXISTS " + INCOME_TABLE);
         db.execSQL("DROP TABLE IF EXISTS " + MEMO_TABLE);
-        db.execSQL("DROP TABLE IF EXISTS " + CAMERA_TABLE);
 
         //アップデートしたテーブルを作成
         onCreate(db);

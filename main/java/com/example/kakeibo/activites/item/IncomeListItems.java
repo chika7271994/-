@@ -16,7 +16,7 @@ public class IncomeListItems {
         this.income_id = income_id;
     }
 
-    //----------------------------------------------------------------------------------
+
 
     public String getIncome_category(){
         return income_category;
@@ -24,7 +24,7 @@ public class IncomeListItems {
 
     public void setIncome_category(String income_category){ this.income_category = income_category; }
 
-    //----------------------------------------------------------------------------------
+
 
     public int getIncome_price(){
         return income_price;
@@ -34,7 +34,7 @@ public class IncomeListItems {
         this.income_price = income_price;
     }
 
-    //-----------------------------------------------------------------------------------
+
 
     public String getImageUri() { return imageUri; }
 

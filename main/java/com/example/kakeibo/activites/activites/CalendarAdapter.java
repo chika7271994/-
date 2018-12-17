@@ -30,6 +30,9 @@ public class CalendarAdapter extends BaseAdapter {
     private DataManager dataManager;
     private LayoutInflater mLayoutInflater;
     private DatabaseManager mDatabaseManager;
+    private String yy;
+    private String mm;
+    private String dd;
 
     //カスタムセルを拡張したらここでWigetを定義
     private static class ViewHolder {
@@ -72,15 +75,23 @@ public class CalendarAdapter extends BaseAdapter {
         SimpleDateFormat dateFormat = new SimpleDateFormat("d", Locale.US);
         holder.dateText.setText(dateFormat.format(dateArray.get(position)));
 
-        if (dataManager.isToday(dateArray.get(position))){
-            Cursor cursor = mDatabaseManager.retrieveByDateM("2018", "12", "14");
+        //if (dataManager.isToday(dateArray.get(position))){
+
+        //--- 予定が入っている日にちにアイコン出力 ---
+            yy = new SimpleDateFormat("yyyy", Locale.getDefault()).format(new Date(String.valueOf(dateArray.get(position))));
+            mm = new SimpleDateFormat("MM", Locale.getDefault()).format(new Date(String.valueOf(dateArray.get(position))));
+            dd = new SimpleDateFormat("dd", Locale.getDefault()).format(new Date(String.valueOf(dateArray.get(position))));
+
+            Cursor cursor = mDatabaseManager.retreveMemoData(yy,mm,dd);
+            //LogUtil.debug("データベース", "中身の有無" + mDatabaseManager.retreveMemoData(yy,mm,dd));
             if (cursor.moveToFirst()){
                 do {
                     cursor.getString(1);
+                    holder.memo.setImageResource(R.drawable.event);
                 }while (cursor.moveToNext());
             }
-            holder.memo.setImageResource(R.drawable.event);
-        }
+
+        //}
 
 
         //当月以外のセルをグレーアウト
@@ -111,7 +122,6 @@ public class CalendarAdapter extends BaseAdapter {
         }
         holder.dateText.setTextColor(colorId);
 
-        //LogUtil.debug("CalendarAdapter", "ゲットポジション" + dateArray.get(position));
         return convertView;
     }
 
